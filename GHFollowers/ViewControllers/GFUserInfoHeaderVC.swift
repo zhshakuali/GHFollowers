@@ -2,50 +2,54 @@
 //  GFUserInfoHeaderVC.swift
 //  GHFollowers
 //
-//  Created by Жансая Шакуали on 24.07.2023.
+//  Created by Жансая Шакуали on 30.07.2023.
 //
 
 import UIKit
 
 class GFUserInfoHeaderVC: UIViewController {
-
-    let avatarImageView = GFAvatarImageView(frame: .zero)
-    let usernameLabel = GFTitileLabel(textAlignment: .left, fontSize: 34)
-    let nameLabel = GFSecondaryTitleLabel(fontSize: 18)
-    let locationImageView = UIImageView()
-    let locationLabel = GFSecondaryTitleLabel(fontSize: 18)
-    let bioLabel = GFBodyLabel(textAlignment: .left)
+    
+    let avatarImageView     = GFAvatarImageView(frame: .zero)
+    let usernameLabel       = GFTitileLabel(textAlignment: .left, fontSize: 34)
+    let nameLabel           = GFSecondaryTitleLabel(fontSize: 18)
+    let locationImageView   = UIImageView()
+    let locationLabel       = GFSecondaryTitleLabel(fontSize: 18)
+    let bioLabel            = GFBodyLabel(textAlignment: .left)
     
     var user: User!
     
-    init(user: User!) {
+    
+    init(user: User) {
         super.init(nibName: nil, bundle: nil)
         self.user = user
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         layoutUI()
-        configureUIelements()
-        
+        configureUIElements()
     }
     
-    func configureUIelements() {
+    
+    func configureUIElements() {
         avatarImageView.downloadImage(from: user.avatarUrl)
-        usernameLabel.text = user.login
-        nameLabel.text = user.name ?? ""
-        locationLabel.text = user.location ?? "No Location"
-        bioLabel.text = user.bio ?? "No bio"
-        bioLabel.numberOfLines = 3
+        usernameLabel.text          = user.login
+        nameLabel.text              = user.name ?? ""
+        locationLabel.text          = user.location ?? "No Location"
+        bioLabel.text               = user.bio ?? "No bio available"
+        bioLabel.numberOfLines      = 3
         
-        locationImageView.image = UIImage(systemName: SFSymbols.location)
-        locationLabel.tintColor = .secondaryLabel
+        locationImageView.image     = UIImage(systemName: SFSymbols.location)
+        locationImageView.tintColor = .secondaryLabel
     }
+    
     
     func addSubviews() {
         view.addSubview(avatarImageView)
@@ -56,9 +60,10 @@ class GFUserInfoHeaderVC: UIViewController {
         view.addSubview(bioLabel)
     }
     
+    
     func layoutUI() {
-        let padding: CGFloat = 20
-        let textImagePadding: CGFloat = 12
+        let padding: CGFloat            = 20
+        let textImagePadding: CGFloat   = 12
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

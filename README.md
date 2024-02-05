@@ -14,7 +14,7 @@ GHFollowers is an iOS app that allows the user to search for github users.
 
 ## Screenshots
 Light Mood
-<img src="https://github.com/zhshakuali/GHFollowers/assets/119519373/9881e838-e92b-4470-afc9-53aaf509b795" width="100" height="100">
+<img src="https://github.com/zhshakuali/GHFollowers/assets/119519373/9881e838-e92b-4470-afc9-53aaf509b795" width="400" height="790">
 
 ![photo_2024-02-06 02 32 32](https://github.com/zhshakuali/GHFollowers/assets/119519373/5d7c6d1a-d374-4f94-8f8a-2e57fc550690)
 ![photo_2024-02-06 02 32 31](https://github.com/zhshakuali/GHFollowers/assets/119519373/8710d13f-252a-468e-9e8c-58684f9baf60)
